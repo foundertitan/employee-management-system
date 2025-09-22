@@ -89,6 +89,15 @@ Used for adding/editing employees and viewing detailed employee information.
    ```bash
    git clone https://github.com/<your-username>/<your-repo>.git
 
+Here are the some of the functionalities this app perfoms-
 
 <img width="1041" height="952" alt="add" src="https://github.com/user-attachments/assets/d19f6215-8f42-4e15-a4e0-10992becf659" />
+<img width="1194" height="1330" alt="Dashboard" src="https://github.com/user-attachments/assets/fc1bfc7a-eed6-49b7-9815-4f8e7884b0d9" />
+<img width="1173" height="1251" alt="Manage Employee Tab" src="https://github.com/user-attachments/assets/4a4c4744-4b79-470a-91d1-375846bee0e3" />
+<img width="1174" height="998" alt="Other tabs looks the same" src="https://github.com/user-attachments/assets/f81e5341-cec0-41b7-a5fa-0cd089246633" />
+<img width="1190" height="1591" alt="Retirement Tab" src="https://github.com/user-attachments/assets/a954633f-01d9-4611-a07c-9990ea3a633e" />
+
+
+
+
 
