@@ -1,103 +1,192 @@
-# Employee Management System (EMS)
+# Employee Management System (EMS) &nbsp;![Status](https://img.shields.io/badge/status-active-brightgreen) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](#-contributing)  
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-43853D?logo=node.js&logoColor=white)](#-tech-stack) [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](#-tech-stack) [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas%2FLocal-47A248?logo=mongodb&logoColor=white)](#-tech-stack) [![GraphQL](https://img.shields.io/badge/GraphQL-Apollo-E10098?logo=graphql&logoColor=white)](#-tech-stack)
 
-## Overview
-The **Employee Management System (EMS)** manages and tracks employees, departments, titles, types, and statuses within an organization.  
-It also calculates and displays employee retirement information, including expected retirement dates, time left until retirement, and current retirement status (Retired or Upcoming).  
-The system is built with **Node.js**, **Express**, **MongoDB**, **GraphQL**, and **React**, providing a seamless user experience through a well-organized UI and efficient backend operations.
+The **Employee Management System (EMS)** is a full-stack application for managing employees, departments, job titles, employee types, and statuses. It also computes retirement information (expected retirement date, time left, and whether an employee is retired or approaching retirement).
 
----
-
-## Key Features
-- **Employee Management:** CRUD (Create, Read, Update, Delete) operations on employee records  
-- **Department Management:** Manage different departments within the organization  
-- **Title Management:** Create, update, and delete job titles  
-- **Type Management:** Categorize employees into different types  
-- **Status Management:** Track employee statuses (e.g., Active, Inactive)  
-- **Retirement Calculations:** Automatically calculate retirement dates and categorize employees as Retired or Upcoming  
-- **Filtering & Sorting:** Filter employees by various criteria and sort by attributes  
-- **GraphQL API:** Flexible API for querying and mutating data  
-- **React Front-End:** Responsive UI built with React, styled using Bootstrap
+Built with **Node.js**, **Express**, **MongoDB**, **GraphQL** on the backend and **React** on the frontend.
 
 ---
 
-## System Architecture
-
-### Backend
-Built with **Node.js**, **Express**, **MongoDB**, and **GraphQL**.  
-Key components:
-- **GraphQL Resolvers:** Handle queries and mutations for employees, departments, titles, types, and statuses
-- **Helper Functions:**
-  - `calculateRetirementDate(dateOfBirth)` – Adds 65 years to date of birth to get retirement date
-  - `calculateAge(dateOfBirth)` – Calculates current age
-  - `calculateTimeLeft(retirementDate)` – Calculates time left until retirement
-
-### Front-End
-Built with **React**:
-- `App` – Defines routes and layout
-- `Dashboard` – Displays an overview of the organization
-- `ManageEmployees` – CRUD operations and detailed employee information
-- `UpcomingRetirements` – Lists employees with upcoming retirements and supports filtering by employee type
+## 📌 Table of Contents
+- [Key Features](#-key-features)
+- [Architecture](#-architecture)
+- [Tech Stack](#-tech-stack)
+- [Prerequisites](#-prerequisites)
+- [Setup & Running Locally](#-setup--running-locally)
+- [Open in Browser](#-open-in-browser)
+- [Usage](#-usage)
+- [Screenshots](#-screenshots)
+- [Environment Variables](#-environment-variables)
+- [Project Scripts](#-project-scripts)
+- [Future Enhancements](#-future-enhancements)
+- [Contributing](#-contributing)
+- [License & Author](#-license--author)
 
 ---
 
-## Data Visualization
-- **Pie Charts:** Created using **recharts** to visualize employee distribution by department, title, type, and status.
+## ✅ Key Features
+- CRUD for **Employees**, **Departments**, **Titles**, **Types**, **Statuses**
+- **Retirement calculations** (retirement date, time remaining, retired/upcoming)
+- **Filtering & sorting** by department, type, status, and more
+- **GraphQL API** for flexible querying/mutations
+- **React UI** with charts and responsive layout
 
 ---
 
-## Package Dependencies
-- **Node.js** – JavaScript runtime for the backend server
-- **Express.js** – Web framework for Node.js
-- **MongoDB** – NoSQL database for data storage
-- **Mongoose** – ODM library for MongoDB and Node.js
-- **GraphQL** – Query language for APIs
-- **Apollo Server** – GraphQL server implementation
-- **React** – JavaScript library for building the UI
-- **React Router** – Routing in React applications
-- **Bootstrap** – CSS framework for styling
-- **Axios** – Promise-based HTTP client
-- **Recharts** – Library for creating charts
-- **React Bootstrap** – Bootstrap components for React
-- **React Toastify** – Notifications library
-- **Font Awesome** – Icon library for UI icons
+## 🏗 Architecture
+```
+employee-management-system/
+├─ api-server/         # Node.js + Express + GraphQL (Apollo) + MongoDB
+│  ├─ src/
+│  │  ├─ models/       # Mongoose schemas
+│  │  ├─ resolvers/    # GraphQL resolvers (queries/mutations)
+│  │  ├─ schema/       # GraphQL type definitions
+│  │  └─ index.js      # Server bootstrap
+│  └─ package.json
+└─ ui-server/          # React app (dashboard, lists, forms)
+   ├─ src/
+   │  ├─ components/   # Reusable UI
+   │  ├─ pages/        # Dashboard, Employees, Retirements, etc.
+   │  ├─ graphql/      # Queries/mutations/hooks
+   │  └─ App.jsx
+   └─ package.json
+```
 
 ---
 
-## Code Explanation
-
-### GraphQL Resolvers
-- **Employees:**
-  - `employees` – Fetches all employees and calculates details such as age, retirement date, time left, and retirement status
-  - `employee` – Fetches a specific employee by ID
-  - `upcomingRetirements` – Fetches employees with retirements in the next six months
-- **Departments, Titles, Types, and Statuses:** Fetch respective entities from the database
-- **Mutations:** CRUD operations for employees, departments, titles, types, and statuses
-
-### React Components
-- `App` – Sets up routes and main layout
-- `Dashboard` – Shows total counts and pie charts for employees, departments, titles, types, and statuses
-- `ManageEmployees` – Manages employee records, including filtering, sorting, and viewing details
-- `UpcomingRetirements` – Lists employees nearing retirement, with type-based filtering
-
-### Modals
-Used for adding/editing employees and viewing detailed employee information.
+## 🧰 Tech Stack
+- **Backend:** Node.js, Express, GraphQL (Apollo Server), MongoDB, Mongoose
+- **Frontend:** React, React Router, (optionally) Bootstrap/React-Bootstrap, Recharts
+- **Client Data:** Apollo Client (or Axios if mixing REST)
+- **Tooling:** npm, ESLint/Prettier (optional)
 
 ---
 
-## Getting Started
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git
+## ✅ Prerequisites
+- **Node.js** (LTS)
+- **npm** or **yarn**
+- **MongoDB** (local or Atlas connection URI)
 
-Here are the some of the functionalities this app perfoms-
+---
 
-<img width="1041" height="952" alt="add" src="https://github.com/user-attachments/assets/d19f6215-8f42-4e15-a4e0-10992becf659" />
-<img width="1194" height="1330" alt="Dashboard" src="https://github.com/user-attachments/assets/fc1bfc7a-eed6-49b7-9815-4f8e7884b0d9" />
-<img width="1173" height="1251" alt="Manage Employee Tab" src="https://github.com/user-attachments/assets/4a4c4744-4b79-470a-91d1-375846bee0e3" />
-<img width="1174" height="998" alt="Other tabs looks the same" src="https://github.com/user-attachments/assets/f81e5341-cec0-41b7-a5fa-0cd089246633" />
-<img width="1190" height="1591" alt="Retirement Tab" src="https://github.com/user-attachments/assets/a954633f-01d9-4611-a07c-9990ea3a633e" />
+## 🚀 Setup & Running Locally
 
+### 1) Clone
+```bash
+git clone https://github.com/foundertitan/employee-management-system.git
+cd employee-management-system
+```
 
+### 2) Backend (API)
+```bash
+cd api-server
+npm install
+# Create a .env (see "Environment Variables" below)
+npm run dev   # or: npm start
+```
 
+### 3) Frontend (UI)
+```bash
+cd ../ui-server
+npm install
+npm start
+```
 
+---
 
+## 🌐 Open in Browser
+- **Frontend:** http://localhost:3000  
+- **GraphQL endpoint:** http://localhost:4000/graphql (or whatever your backend prints)
+
+---
+
+## 🧭 Usage
+- Navigate the **Dashboard** to view summaries and charts.
+- Use **Manage Employees** to **add / edit / delete** employees.
+- **Filter** and **sort** by department, type, or status.
+- Check **Upcoming Retirements** to see who’s nearing retirement (based on computed data).
+- Open detail **views/modals** to review or update a single employee.
+
+---
+
+## 📸 Screenshots
+
+> Place your images in one of these:
+> - `ui-server/public/screenshots/` (good for React static assets)
+> - `/screenshots` at the repo root
+
+| Dashboard | Employee List | Retirement View |
+| --- | --- | --- |
+| ![Dashboard](ui-server/public/screenshots/dashboard.png) | ![Employee List](ui-server/public/screenshots/employee-list.png) | ![Retirement View](ui-server/public/screenshots/retirements.png) |
+
+**Optional extras:**  
+![Add / Edit Employee](ui-server/public/screenshots/add-edit-modal.png)  
+![Employee Detail](ui-server/public/screenshots/employee-detail.png)  
+![Filters & Sorting](ui-server/public/screenshots/filters.png)
+
+---
+
+## 🔐 Environment Variables
+
+Create a **`.env`** file in **`api-server/`**:
+```env
+# Mongo connection
+MONGODB_URI=mongodb://localhost:27017/ems   # or your Mongo Atlas URI
+
+# Server
+PORT=4000
+
+# (Optional) JWT or session secrets if you add auth later
+JWT_SECRET=changeme_please
+```
+
+(Optional) In **`ui-server/`**, if you need a custom API URL:
+```env
+REACT_APP_API_URL=http://localhost:4000/graphql
+```
+
+---
+
+## 🧪 Project Scripts
+
+### Backend (`api-server/package.json`)
+- `npm run dev` — run with nodemon (recommended during development)  
+- `npm start` — run server  
+- *(optional)* `npm run seed` — seed initial data if you add a seeder  
+
+### Frontend (`ui-server/package.json`)
+- `npm start` — start dev server (React)  
+- `npm run build` — production build  
+- `npm test` — run tests (if configured)
+
+---
+
+## 🔮 Future Enhancements
+- Role-based auth (Admin/HR/Employee)  
+- Export (CSV/Excel/PDF)  
+- Email/push notifications for upcoming retirements  
+- Bulk import (CSV)  
+- Server-side pagination for large datasets  
+- Advanced multi-criteria filters  
+- Improved error handling, validation, and test coverage  
+- Cloud deployment (Render/Heroku/AWS/Vercel)  
+- Dark mode & theme customization
+
+---
+
+## 🤝 Contributing
+1. Fork the repo  
+2. Create a feature branch: `git checkout -b feature/my-change`  
+3. Commit: `git commit -m "feat: add my change"`  
+4. Push: `git push origin feature/my-change`  
+5. Open a Pull Request describing your changes  
+
+Please follow the existing naming and code style guidelines where applicable.
+
+---
+
+## 📜 License & Author
+This project is open-source under the **MIT License**.
+
+**Author/Maintainer:** FounderTitan  
+**GitHub:** [foundertitan](https://github.com/foundertitan)
