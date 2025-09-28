@@ -109,23 +109,6 @@ npm start
 
 ---
 
-## 📸 Screenshots
-
-> Place your images in one of these:
-> - `ui-server/public/screenshots/` (good for React static assets)
-> - `/screenshots` at the repo root
-
-| Dashboard | Employee List | Retirement View |
-| --- | --- | --- |
-| ![Dashboard](ui-server/public/screenshots/dashboard.png) | ![Employee List](ui-server/public/screenshots/employee-list.png) | ![Retirement View](ui-server/public/screenshots/retirements.png) |
-
-**Optional extras:**  
-![Add / Edit Employee](ui-server/public/screenshots/add-edit-modal.png)  
-![Employee Detail](ui-server/public/screenshots/employee-detail.png)  
-![Filters & Sorting](ui-server/public/screenshots/filters.png)
-
----
-
 ## 🔐 Environment Variables
 
 Create a **`.env`** file in **`api-server/`**:
